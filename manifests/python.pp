@@ -18,8 +18,13 @@ class apache::python {
 
   package { 'apache_python_package':
     ensure => present,
-    name   => $apache::params::python_package,
+    #name   => $apache::params::python_package,
+    name   => $apache::params::mod_python_package,
   }
+
+  package { 'libapache2-mod-wsgi': ensure => present, }
+
   a2mod { 'python': ensure => present, }
+  a2mod { 'wsgi': ensure => present, }
 
 }
