@@ -17,6 +17,6 @@ NameVirtualHost <%= vhost_name %>:<%= port %>
   CustomLog /var/log/<%= scope.lookupvar("apache::params::apache_name") %>/<%= name %>_access.log combined
   ServerSignature Off
 
-  Redirect 301 / http://www.<%= vhost_name %>/
+  Redirect 301 / http://www.<%= srvname %>/
 </VirtualHost>
 
